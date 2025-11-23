@@ -1,0 +1,4 @@
+(auto_pde) ...\auto_pde> python .\backend\app.py
+...\auto_pde\frontend> npm run dev
+
+[The page runs at localhost:5173]

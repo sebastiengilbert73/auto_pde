@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #2563eb;
+  --background-color: #f8fafc;
+  --text-color: #1e293b;
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+button {
+  cursor: pointer;
+}

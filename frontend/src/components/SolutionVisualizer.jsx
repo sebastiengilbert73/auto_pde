@@ -45,7 +45,7 @@ const SolutionVisualizer = ({ solution }) => {
         }
     ];
 
-    // Calculate global min and max for Z axis to keep scale fixed
+    // Calculate global min and max for all axes to keep scale fixed
     const allValues = frames.flat().flat();
     const zMin = Math.min(...allValues);
     const zMax = Math.max(...allValues);
@@ -59,15 +59,25 @@ const SolutionVisualizer = ({ solution }) => {
         width: 800,
         height: 600,
         scene: {
-            xaxis: { title: 'X' },
-            yaxis: { title: 'Y' },
+            xaxis: {
+                title: 'X',
+                range: [x[0], x[x.length - 1]],
+                autorange: false
+            },
+            yaxis: {
+                title: 'Y',
+                range: [y[0], y[y.length - 1]],
+                autorange: false
+            },
             zaxis: {
                 title: 'u(x,y,t)',
-                range: [zMin - padding, zMax + padding]
+                range: [zMin - padding, zMax + padding],
+                autorange: false
             },
             camera: {
                 eye: { x: 1.5, y: 1.5, z: 1.5 }
-            }
+            },
+            aspectmode: 'cube'
         },
         margin: {
             l: 0,

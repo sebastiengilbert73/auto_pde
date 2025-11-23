@@ -3,7 +3,7 @@ import './PDEForm.css';
 
 const PDEForm = ({ onSubmit, isLoading }) => {
     const [formData, setFormData] = useState({
-        equation: 'uxx + uyy',
+        equation: 'ut - uxx - uyy',
         ic: 'sin(x)*sin(y)',
         domain: {
             x_min: 0,
@@ -44,7 +44,13 @@ const PDEForm = ({ onSubmit, isLoading }) => {
     return (
         <form className="pde-form" onSubmit={handleSubmit}>
             <div className="form-group">
-                <label htmlFor="equation">PDE Equation (LHS, e.g., uxx + uyy)</label>
+                <label htmlFor="equation">
+                    PDE Equation (implicit form: F(...) = 0)
+                    <br />
+                    <small style={{ fontWeight: 'normal', color: '#64748b' }}>
+                        Variables: u, ut, utt, x, y, t, ux, uy, uxx, uyy. Examples: "ut - uxx - uyy" (heat), "utt - uxx - uyy" (wave)
+                    </small>
+                </label>
                 <input
                     type="text"
                     id="equation"

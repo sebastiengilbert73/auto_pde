@@ -20,7 +20,7 @@ def health_check():
 def solve_pde():
     try:
         data = request.json
-        equation = data.get('equation', 'uxx + uyy') # Default heat eq
+        equation = data.get('equation', 'ut - uxx - uyy')  # Default heat eq (implicit form)
         domain = data.get('domain', {
             'x_min': 0, 'x_max': 3.14159,
             'y_min': 0, 'y_max': 3.14159,

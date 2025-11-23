@@ -1,3 +1,2 @@
 /.venv
-.\backend\__pycache__\solver.cpython-314.pyc
-.\backend\__pycache__\
+./backend/__pycache__/
